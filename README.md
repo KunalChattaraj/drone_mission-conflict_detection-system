@@ -77,3 +77,27 @@ Step 4: View Results & Visualizations
 - Parallel Processing: Distributed mission batches (map-reduce style)
 - Infrastructure: Kubernetes + Redis + Kafka for real-time scalable deployment
 - Safety & Compliance: Audit logging, redundancy layers, certification-ready architecture
+
+# 🛡️ Safety Buffer System
+
+## Safety Buffer Zones
+
+| Severity Level | Distance Range | Description | Visual Indicator |
+|---------------|----------------|-------------|------------------|
+| 🚨 **Critical** | ≤ 5m | Immediate danger - High collision risk | Solid red spheres |
+| ⚠️ **High** | 5m - 8m | High risk - Requires immediate attention | Dark orange zones |
+| 📍 **Moderate** | 8m - 10m | Moderate risk - Proceed with caution | Light orange zones |
+| ✅ **Safe** | > 10m | No conflict - Clear for operation | No visual warning |
+
+## How It Works
+
+- **10m Safety Buffer**: Default protected airspace around each drone
+- **Real-time Monitoring**: Continuous 3D distance calculations
+- **Progressive Alerts**: Escalating warnings based on separation distance
+- **Visual Feedback**: Color-coded spheres in 3D visualizations
+
+## Configuration
+
+```python
+# Adjust safety buffer in your code
+checker = MissionConflictChecker(safety_buffer_m=15.0)  # 15m buffer
